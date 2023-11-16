@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.menu {
+  margin: 0;
+}
+
+.navbar {
+  background-color: 0;
+}
+
+.header {
+  padding: 0%;
+}
+
+body {
+  color: red;
+}
+
+/* MIXINS */
+.titulos {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+/* NESTING */
+.golden {
+  background-color: yellow;
+}
+.golden p {
+  color: blue;
+}
+.golden p a {
+  font-weight: bold;
+}
+
+/* MÓDULOS -> Ver style-modulo.css */
+/* HERENCIA */
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.success {
+  border-color: green;
+}
+
+/* OPERADORES */
+/* el @use "sass:math" va al principio de la hoja*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+article[role=main] {
+  width: 62.5%;
+}
+
+aside[role=complementary] {
+  width: 31.25%;
+  margin-left: auto;
+}

@@ -1,0 +1,78 @@
+@use "sass:math";
+
+@import "components/margen";
+@import "components/footer";
+@import "components/header";
+
+
+body {
+    color: red;
+}
+
+/* MIXINS */
+@mixin large-text {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.titulos {
+    @include large-text;
+    padding: 4px;
+    margin-top: 10px;
+}
+
+/* NESTING */
+
+.golden {
+    background-color: yellow;
+
+    p {
+        color: blue;
+
+        a {
+            font-weight: bold;
+        }
+    }
+}
+
+/* MÓDULOS -> Ver style-modulo.css */
+
+/* HERENCIA */
+
+%message-shared {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+%equal-heights {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+.success {
+    @extend %equal-heights;
+    border-color: green;
+}
+
+/* OPERADORES */
+/* el @use "sass:math" va al principio de la hoja*/
+
+.container {
+    display: flex;
+}
+
+article[role="main"] {
+    width: math.div(600px, 960px) * 100%;
+}
+
+aside[role="complementary"] {
+    width: math.div(300px, 960px) * 100%;
+    margin-left: auto;
+}
